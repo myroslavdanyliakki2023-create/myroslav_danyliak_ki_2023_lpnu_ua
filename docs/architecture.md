@@ -17,14 +17,14 @@ AI-клієнт: **GitHub Copilot Chat у VS Code** (режим Agent).
 | Skill: build-and-test | `.github/skills/build-and-test/SKILL.md` | agent skill |
 | Skill: github-actions | `.github/skills/github-actions/SKILL.md` | agent skill |
 | Commands | `.github/prompts/<name>.prompt.md` | prompt file, запуск `/<name>` |
-| Orchestrator | `.github/prompts/init.prompt.md` | prompt file, `/init` |
+| Orchestrator | `.github/prompts/lab-init.prompt.md` | prompt file, `/lab-init` |
 | Система складання | `package.json` (scripts) + `tsconfig.json` | замість `CMakeLists.txt` |
 | Скрипти збірки | `scripts/ci.sh`, `scripts/ci.bat` | викликаються з CI |
 | CI | `.github/workflows/ci.yml` | GitHub Actions |
 
 ## Схема взаємодії
 ```
- Користувач ──/init──▶ init (orchestrator)
+ Користувач ─/lab-init─▶ lab-init (orchestrator)
                         │
    ┌────────────────────┼───────────────────────────────────────────┐
    ▼                    ▼                  ▼                 ▼        ▼
@@ -53,7 +53,7 @@ AI-клієнт: **GitHub Copilot Chat у VS Code** (режим Agent).
 - Кожна command має явну перевірку; при невдачі виводить блок `❌ КРОК / ПРИЧИНА / ЩО ЗРОБИТИ`.
 - Оркестратор зупиняється на першій помилці і не запускає наступні кроки.
 - Успіх фіксується тільки після `check` з `CHECK PASSED`.
-- Ідемпотентність: повторний `init` не перезаписує і не дублює файли.
+- Ідемпотентність: повторний `lab-init` не перезаписує і не дублює файли.
 
 ## Обмеження агента
 - Залежить від якості LLM: може відхилитися від інструкцій, тому результат завжди перевіряє `check` і людина.

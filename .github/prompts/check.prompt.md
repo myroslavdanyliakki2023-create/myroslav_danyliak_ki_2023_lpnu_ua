@@ -11,8 +11,8 @@ description: Перевірити структуру, конфігурацію, 
 
 1. Manifest `.github/agents/build-engineer.agent.md` існує, містить розділи «Роль», «Заборонені дії», «Критерії успішного завершення».
 2. Кожен `.github/skills/*/SKILL.md` (project-scaffold, build-and-test, github-actions) містить: входи, що створити, перевірку, приклад, типову помилку.
-3. Існують усі commands: git-init, create-project, create-build, create-actions, check, init.
-4. `init.prompt.md` викликає команди в порядку git-init → create-project → create-build → create-actions → check.
+3. Існують усі commands: git-init, create-project, create-build, create-actions, check, lab-init.
+4. `lab-init.prompt.md` викликає команди в порядку git-init → create-project → create-build → create-actions → check.
 5. Існують `src/hello.ts`, `src/math.ts`, `tests/math.test.ts`, `package.json`, `package-lock.json`, `tsconfig.json`, `scripts/ci.sh`, `scripts/ci.bat`.
 6. `package.json` має scripts `build`, `test`, `start`.
 7. Запусти `bash scripts/ci.sh` (або `scripts\ci.bat` на Windows) - код виходу 0.

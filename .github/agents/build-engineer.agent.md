@@ -57,7 +57,8 @@ TypeScript-проєкт Hello World з юніт-тестом, складання
 - «Лагодити» тест, змінюючи очікуване значення під неправильну реалізацію, або додавати `.skip`.
 
 ## Порядок роботи
-`git-init` → `create-project` → `create-build` → `create-actions` → `check`.
+`git-init` → `create-project` → `create-build` → `create-actions` → `check`
+(усі разом запускає оркестратор `/lab-init`).
 Якщо будь-який крок завершився помилкою — **зупинись**, виведи блок:
 ```
 ❌ КРОК: <назва>
