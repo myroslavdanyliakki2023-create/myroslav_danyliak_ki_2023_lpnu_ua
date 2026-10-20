@@ -20,7 +20,8 @@ description: Перевірити структуру, конфігурацію, 
 9. `node dist/hello.js` виводить `Hello, World!`.
 10. `ci.yml` - валідний YAML, одна job, matrix з трьох ОС, тригери push і pull_request, без прямих `npm`/`npx`/`tsc`/`vitest`/`secrets.`.
 11. `git ls-files | grep -E "^(node_modules|dist|coverage)/"` - порожньо.
-12. Пошук секретів: `git grep -nIE "(ghp_|github_pat_|npm_[A-Za-z0-9]{20,}|AKIA|BEGIN .*PRIVATE KEY|_authToken)"` - порожньо.
+12. Пошук секретів у коді й конфігурації (файли агента виключено, бо вони містять сам шаблон пошуку):
+    `git grep -nIE "(ghp_|github_pat_|npm_[A-Za-z0-9]{20,}|AKIA|BEGIN .*PRIVATE KEY|_authToken)" -- . ":(exclude).github/prompts" ":(exclude).github/skills" ":(exclude).github/agents" ":(exclude)docs"` - порожньо.
 13. `.gitignore` без дублікатів рядків.
 14. Тести не містять `.skip` / `.only`.
 
