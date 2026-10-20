@@ -14,4 +14,13 @@ VS Code → Copilot Chat → режим **Agent** → агент **build-enginee
 Журнал AI: [docs/ai-log.md](docs/ai-log.md).
 
 ## Проєкт
-<!-- секцію заповнює агент (create-project) -->
+Кросплатформний TypeScript Hello World з TypeScript (`tsc`), Vitest і npm scripts.
+
+```bash
+npm ci
+npm run build
+npm test
+npm start
+```
+
+На Windows також можна запустити весь локальний CI через `scripts\ci.bat`; на Linux/macOS - `bash scripts/ci.sh`.
